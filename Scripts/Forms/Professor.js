@@ -13,6 +13,7 @@ $(document).ready(function () {
 function ProfessorFormCadstro_Load() {
     var doc = $(document);
     doc.on("click", "#btnAdd", null, btnAdd_Click);
+    doc.on("click", "#lstDisciplinas li", null, RemoveDisciplina);
 
 };
 
@@ -39,4 +40,11 @@ function AdicionaDisciplina() {
     } else {
         alert("Disciplina Já inserida!");
     }
+}
+
+function RemoveDisciplina() {
+    $('#lstDisciplinas').on('click', "li", function () {
+        $(this).remove();
+        return false;
+    })
 }
